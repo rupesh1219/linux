@@ -1,0 +1,125 @@
+* Introduction
+
+  This notes is referenced from Ryans Tutorials.
+
+** Sections
+
+*** The command line - what is it, how does it work and how do i get one
+    1. A command line is a text based interface to the system
+    2. example
+       ls -l /home/rupesh/
+       a. breakdown: ls is a command -l is a option used to modify the behaviour of the command and /home/rupesh is an argument that we are passing to command.
+
+
+*** Basic Navigation - An introduction to the linux directory system and how to get around it.
+    1. pwd - print working directory
+    2. ls - what's in your current location
+    3. ls -l
+       a. normal file (-) or directory(d)
+       1. premisson of the file
+       2. # of blocks
+       3. owner of the file or directory
+       4. group of the file this belongs to
+       5. size of the file
+       6. file modification time
+       7. actual name of the directory
+    4. Paths-
+       1. A path means to get to a particular file or directory on the system
+       2. Absolute and relative paths -
+          - Whenever we refer to a file or directory we are actually using one of these paths
+          - Absolute paths specify a location in relation to the root directory
+          - Relative paths in relation to the current location
+       3. Some more building blocks on paths -
+          - ~(tilde) - shortcut for your home directory (/home/rupesh/Documents) - (~/Documents)
+          - .(dot) - reference to your current directory
+          - ..(dotdot) - reference to your parent directory
+    5. cd - change directory
+
+*** More about files - find out some interesting characteristics of files and directories in a linux environment.
+    1. file command - to know what type of file it is
+    2. linux is case sensitive
+    3. Space in names - spaces in file and directory names are prefectly valid but we need to be little careful with them. As you would remember, a space on the command line is how we separate items. They are how we know what is the program name and can identify each command line argument. If we wanted to move into a directory called rupesh documents we need to use cd 'rupesh Documents' -- quotes surrounding the folder name with spaces.
+    4. Or we can use escape characters rupesh\ Documents
+    5. hidden files and directories -
+       - if a file has begun with . then it is hidden file on linux
+       - ls -a list all contents of the directory
+
+*** Manual Pages - learn how to make the most of the linux commands you are learning
+    1. manual pages are set of pages that explain the command available on your system including what theydo. the specifies of how you run them and what line arguments they accept.
+    2. man <command you want look up>
+    3. It is possible to do a keyword search on manual pages.
+    4. man -k <search>
+
+*** File manipulation - how to make, remove, rename, copy and move files and directories
+    1. mkdir - make directory
+    2. mkdir -v -- actually tells what it is doing
+    3. rmdir - remove directory
+    4. touch filename - creating a blank file
+    5. cp
+    6. mv
+    7. rm
+    8. linux donest have undo feauture - but i belive we can set up a temp directoiry where all deleted files end up and can be retrieved
+
+*** VI text editor - Discover the powerful linux based text editor
+    1. Vi is command line text editor
+    2. vi insert mode and edit mode
+    3. ZZ - save and exit
+    4. :q! - discard all changes since last save
+    5. :w - save file but dont exit
+    6. :wq - save file and exit
+    7. most of the keys in vi are executed as you enter the key but when you enter : infront of the key it actually waits for you to hit enter
+    8. other ways to view file -
+       - cat <file> - this will print the file right away in the termianl
+       - vi <file> - will actually open a vi editor
+
+*** Wildcards - also referred to as globbing, this is a means to refer to several files in one go.
+    1. Wildcards are set of building blocks that allow you to create a pattern defining a set of files or directores.
+    2. * - represents 0 or more characters
+    3. ? - represents a single character
+    4. [] - reperesents range of charactes
+
+*** Permissons - learn to identify and change the permissions of files and directories and what the consequences of these are
+    1. permissons to files - chmod and concept of owner, groups and others
+    2. read,write and execute permissons
+    3. chmod - with different combinations to give permissons to files.
+
+*** Filters - An Introduction to various commands that allow us to mangle the data in interesting and useful ways.
+    1. A Filter, in the context of the linux command line, is a program that accepts textual data and then transforms it in a particular way.
+    2. head [-number of lines to print from top][path]
+    3. tail [-number of lines to print from bottom][path]
+    4. sort[-options][path]
+    5. nl - numberlines - it will just number all lines printed from the text file
+    6. wc - word count
+    7. cut - nice little program to use if your content separated by into fields
+    8. sed - stream editor - it effectively allows us to do a search and replace on our data.
+    9. uniq - unique - remove duplicate lines from data
+    10. tac - reverse of cat - print lines in reverse order
+
+*** Grep and regular expressions - master a powerful pattern matching language that is useful for anlaysing and processing data
+    1. Regular expressions are similar to wildcards
+    2. These are bit powerful, typically used to identify and manipulate specific pieces of data
+    3. egrep - egrep is a program which will search a given set of data and print every line which contains a given pattern
+    4. read more about regular expressions in another repository
+
+*** Piping and redirection - join commands together in powerful combinations
+    1. Every program we run on the command line has three data streams connect to it.
+       - STDIN(0)-standard input
+       - STDOUT(1)-standard output
+       - STDERR(2)-standard error
+    2. Piping and redirection means by which we may connect these different streams between programs and files to direct the data in interesting and useful ways
+    3. This technique will be more helpful of creating sequential jobs using bash scripting
+    4. > - operator means we wish the commands output to a file
+    5. >> - this will append the data into the file insted of overwriting where > operator does that
+    6. 1> output.txt 2>output.txt 0>output.txt >output.txt
+    7. 2>&1 both stdout and stderr redirected to output file
+    8. So far above we dealt with sending data to and from files, now we will look at how to send data from one program to other program using piping.
+    9. And the operator we use is (|)
+    10. what it does is it sends the left side of the ouput to right side of the pipe as an input
+    11.
+
+*** Process Management - See what is currently on your linux system and what state the system is in, learn how to kill programs that have hung and put jobs in the background.
+    1. top
+    2. htop
+
+*** Scripting - be happy, get the computer to do tedious and repetitive tasks for you
+    1. bash sripting in bash repository
