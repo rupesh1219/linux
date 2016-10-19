@@ -1,7 +1,6 @@
 * Introduction
 
   This notes is referenced from Ryans Tutorials.
-
 ** Sections
 
 *** The command line - what is it, how does it work and how do i get one
@@ -82,6 +81,7 @@
     1. permissons to files - chmod and concept of owner, groups and others
     2. read,write and execute permissons
     3. chmod - with different combinations to give permissons to files.
+    4. top command - we call always see the PID from this menu and kill a cron job
 
 *** Filters - An Introduction to various commands that allow us to mangle the data in interesting and useful ways.
     1. A Filter, in the context of the linux command line, is a program that accepts textual data and then transforms it in a particular way.
